@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Keyboard,
 } from "react-native";
 
 export default function AuthScreen({ onAuthSuccess }: { onAuthSuccess: () => void }) {

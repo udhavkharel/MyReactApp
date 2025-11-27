@@ -25,7 +25,7 @@ export default function FeaturesScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, marginTop: 10 },
+  container: { flex: 1, marginTop: 50, marginLeft: 6 },
   title: { fontSize: 24, fontWeight: "700" },
   subtitle: { marginTop: 4, color: "#6B7280" },
   card: {

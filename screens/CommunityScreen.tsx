@@ -54,7 +54,7 @@ export default function CommunityScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  title: { fontSize: 24, fontWeight: "700", marginTop: 10 },
+  title: { fontSize: 24, fontWeight: "700", marginTop: 50, marginLeft: 6 },
   subtitle: {
     color: "#6B7280",
     marginBottom: 8,

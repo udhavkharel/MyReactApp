@@ -93,8 +93,8 @@ export default function JournalScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { paddingBottom: 30 },
-  title: { fontSize: 24, fontWeight: "700", marginTop: 10 },
+  container: { paddingBottom: 30, marginLeft: 6 },
+  title: { fontSize: 24, fontWeight: "700", marginTop: 50 },
   subtitle: {
     color: "#6B7280",
     marginBottom: 12,

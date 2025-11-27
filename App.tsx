@@ -13,7 +13,7 @@ import NavBar from "./components/NavBar";
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [activeTab, setActiveTab] = useState("Home"); // Home | Community | Journal | Contacts | Features | About
+  const [activeTab, setActiveTab] = useState("Home");
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -24,42 +24,50 @@ export default function App() {
     return <AuthScreen onAuthSuccess={() => setIsLoggedIn(true)} />;
   }
 
+  // Select Screen
   let ScreenComponent = HomeScreen;
-  if (activeTab === "Home") ScreenComponent = HomeScreen;
   if (activeTab === "Community") ScreenComponent = CommunityScreen;
   if (activeTab === "Journal") ScreenComponent = JournalScreen;
-  if (activeTab === "Contacts") ScreenComponent = ContactsScreen; 
+  if (activeTab === "Contacts") ScreenComponent = ContactsScreen;
   if (activeTab === "Features") ScreenComponent = FeaturesScreen;
   if (activeTab === "About") ScreenComponent = AboutScreen;
 
-
-return (
+ return (
   <SafeAreaView style={styles.appContainer}>
 
-    {/* NAVBAR AT THE TOP */}
-    <NavBar
-      activeTab={activeTab}
-      onTabChange={setActiveTab}
-      onLogout={handleLogout}
-    />
-
+    {/* 🔥 SCREEN FIRST */}
     <View style={styles.screenWrapper}>
       <ScreenComponent />
+    </View>
+
+    {/* 🔥 NAVBAR AT BOTTOM BUT FLOATING ABOVE GESTURE BAR */}
+    <View style={styles.navWrapper}>
+      <NavBar
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onLogout={handleLogout}
+      />
     </View>
 
   </SafeAreaView>
 );
 
-
 }
+
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: "#F5F6FA",
+    backgroundColor: "#FFF8E7",
   },
+
+  navWrapper: {
+    zIndex: 9999,         // 🔥 FIX: makes navbar clickable
+    elevation: 20,        // for Android
+    backgroundColor: "transparent",
+  },
+
   screenWrapper: {
     flex: 1,
-    paddingHorizontal: 16,
-    paddingTop: 10,
+    marginTop: 10,
   },
 });

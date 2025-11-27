@@ -61,24 +61,28 @@ export default function NavBar({
 
 const styles = StyleSheet.create({
   safeArea: {
-    paddingBottom: 10, // ensures ABOVE gesture bar
+    paddingTop: 18,      // ⬅️ fixes notch spacing
+    paddingBottom: 10,
     backgroundColor: "transparent",
+    zIndex: 999,
   },
 
   navContainer: {
     backgroundColor: "#0F1828",
-    paddingVertical: 10,
+    paddingVertical: 10, // ⬅️ was 50 — causing notch overlap
     paddingHorizontal: 10,
 
-    borderRadius: 18,
+    borderRadius: 16,
     marginHorizontal: 18,
-    marginBottom: 8, // floating look
+    marginBottom: 12,
 
     elevation: 12,
     shadowColor: "#000",
     shadowOpacity: 0.18,
-    shadowRadius: 10,
+    shadowRadius: 20,
     shadowOffset: { width: 0, height: 4 },
+
+    zIndex: 999, // ensure clicks work
   },
 
   tabRow: {
@@ -87,7 +91,7 @@ const styles = StyleSheet.create({
   },
 
   tab: {
-    paddingVertical: 8,
+    paddingVertical: 8,  // ⬅️ reduced for cleaner height
     paddingHorizontal: 16,
     borderRadius: 20,
     marginRight: 12,

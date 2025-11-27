@@ -31,11 +31,12 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 20,
+    marginLeft: 6,
   },
   title: {
     fontSize: 26,
     fontWeight: "700",
-    marginTop: 10,
+    marginTop: 50,
   },
   tagline: {
     marginTop: 4,
